@@ -1,9 +1,11 @@
 import React from 'react';
 
+import HelperBox from '../../hoc/HelperBox';
+
 const home = () => (
-  <div>
+  <HelperBox>
     <h2>Welcome to your employee APP</h2>
-  </div>
-)
+  </HelperBox>
+);
 
 export default home;

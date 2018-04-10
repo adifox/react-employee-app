@@ -9,10 +9,10 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-          <Layout>
-            <Route path="/" exact component={Home} />
-            <Route path="/list" component={EmployeeList} />
-          </Layout>
+        <Layout>
+          <Route path="/" exact={ true } component={ Home } />
+          <Route path="/list" component={ EmployeeList } />
+        </Layout>
       </BrowserRouter>
     );
   }
