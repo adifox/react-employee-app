@@ -1,31 +1,23 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import Employee from '../../components/Employee/Employee';
-// import EmployeeDetails from '../../components/EmployeeDetails/EmployeeDetails';
 
 class EmployeeList extends Component {
   state = {
-    employees: [
-      { name: 'Mark', age: 26, position: 'front-end' },
-      { name: 'Tom', age: 32, position: 'back-end' },
-      { name: 'Paul', age: 34, position: 'dev-ops' }
-    ]
-    // details: []
+    employees: []
   }
 
-  // showDetails(arg) {
-  //   this.state.employees.map((_, i) => {
-  //     if (i === arg) {
-  //       let employee = this.state.employees[i];
-  //       this.setState({details: employee})
-  //     }
-  //   })
-  // }
+  componentDidMount() {
+    axios.get('https://my-json-server.typicode.com/adifox/fake-json-directory/db')
+      .then((response) => {
+        this.setState({ employees: response.data.heroDetails })
+      })
+  }
 
   render () {
     return (
-      <Employee employee={this.state.employees} />
-        // click={this.showDetails.bind(this)}/>
+      <Employee employee={ this.state.employees } />
     )
   }
 }

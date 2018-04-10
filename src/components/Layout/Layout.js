@@ -7,7 +7,7 @@ const layout = (props) => (
   <HelperBox>
     <Header />
     <main className='container'>
-      {props.children}
+      { props.children }
     </main>
   </HelperBox>
 )
